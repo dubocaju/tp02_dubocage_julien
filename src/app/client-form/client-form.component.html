@@ -1,0 +1,40 @@
+<div class="container">
+  <h2>Mon super formulaire</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="lastname">Nom</label>
+      <input type="text" class="form-control" id="lastname" [(ngModel)]="model.lastname"
+             name="lastname">
+      <label for="firstname">Prénom</label>
+      <input type="text" class="form-control" id="firstname" [(ngModel)]="model.firstname"
+             name="firstname">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="model.email" name="email">
+      <label for="login">Login</label>
+      <input type="text" class="form-control" id="login" [(ngModel)]="model.login" name="login">
+      <label for="password">Mot de passe</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="model.password"
+             name="password">
+      <label for="phone">Numéro de téléphone</label>
+      <input type="text" class="form-control" id="phone" [(ngModel)]="model.phone"
+             name="phone">
+      <label for="address">Adresse</label>
+      <input type="text" class="form-control" id="address" [(ngModel)]="model.address"
+             name="address">
+      <label for="city">Ville</label>
+      <input type="text" class="form-control" id="city" [(ngModel)]="model.city" name="city">
+      <label for="zip">Code postal</label>
+      <input type="text" class="form-control" id="zip" [(ngModel)]="model.zip" name="zip">
+      <label for="country">Pays</label>
+      <input type="text" class="form-control" id="country" [(ngModel)]="model.country"
+             name="country">
+      <label for="civility">Civilité</label>
+      <select class="form-control" id="civility" [(ngModel)]="model.civility" name="civility">
+        <option value="M">M</option>
+        <option value="Mme">Mme</option>
+        <option value="Other">Autre</option>
+      </select>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
