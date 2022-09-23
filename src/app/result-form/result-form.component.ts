@@ -1,23 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {Component} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import {Client} from "../client";
+import {ClientService} from "../client.service";
 
 @Component({
   selector: 'app-result-form',
   templateUrl: './result-form.component.html',
   styleUrls: ['./result-form.component.css']
 })
-export class ResultFormComponent implements OnInit {
-  model: Client | undefined;
+export class ResultFormComponent {
+  model: Client;
 
   constructor(
-    private route: ActivatedRoute
-  ) { }
-
-  ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.model = JSON.parse(params['client']);
-    });
+    private route: ActivatedRoute,
+    private clientService: ClientService
+  ) {
+    this.model = this.clientService.client;
   }
-
 }
