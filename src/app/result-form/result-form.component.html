@@ -1,0 +1,15 @@
+<div class="container">
+  <button [routerLink]="['/client-form']" class="btn btn-primary">Revenir au formulaire</button>
+  <ul class="list-group">
+    <li class="list-group-item">Nom : {{model?.lastname}}</li>
+    <li class="list-group-item">Prénom: {{model?.firstname}}</li>
+    <li class="list-group-item">Email : {{model?.email}}</li>
+    <li class="list-group-item">Login : {{model?.login}}</li>
+    <li class="list-group-item">Numéro de téléphone : {{model?.phone}}</li>
+    <li class="list-group-item">Adresse : {{model?.address}}</li>
+    <li class="list-group-item">Ville : {{model?.city}}</li>
+    <li class="list-group-item">Pays : {{model?.country}}</li>
+    <li class="list-group-item">Code postal : {{model?.zip}}</li>
+    <li class="list-group-item">Civilité : {{model?.civility}}</li>
+  </ul>
+</div>

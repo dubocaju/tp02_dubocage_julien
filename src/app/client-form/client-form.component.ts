@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Client} from "../client";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-client-form',
@@ -22,7 +23,11 @@ export class ClientFormComponent {
     'Monsieur'
   )
 
+  constructor(
+    private router: Router
+  ) {}
+
   onSubmit() {
-    console.log(this.model);
-  }
+    this.router.navigate(['/result'], {queryParams: {client: JSON.stringify(this.model)}}).then(r => console.log(r));
+   }
 }

@@ -7,13 +7,15 @@ import { ClientFormComponent } from './client-form/client-form.component';
 import {FormsModule} from "@angular/forms";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ResultFormComponent } from './result-form/result-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClientFormComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ResultFormComponent
   ],
   imports: [
     BrowserModule,
