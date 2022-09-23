@@ -1,15 +1,27 @@
 export class Client {
+  public firstname: string;
+  public lastname: string;
+  public email: string;
+  public login: string;
+  public password: string;
+  public phone: string;
+  public address: string;
+  public city: string;
+  public zip: string;
+  public country: string;
+  public civility: string;
   constructor(
-    public firstname: string,
-    public lastname: string,
-    public email: string,
-    public login: string,
-    public password: string,
-    public phone: string,
-    public address: string,
-    public city: string,
-    public zip: string,
-    public country: string,
-    public civility: string
-  ) { }
+  ) {
+    this.firstname = '';
+    this.lastname = '';
+    this.email = '';
+    this.login = '';
+    this.password = '';
+    this.phone = '';
+    this.address = '';
+    this.city = '';
+    this.zip = '';
+    this.country = '';
+    this.civility = '';
+  }
 }
