@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Client} from "./client";
+import {Client} from "../entities/client";
 
 @Injectable({
   providedIn: 'root'

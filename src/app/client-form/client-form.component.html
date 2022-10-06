@@ -1,36 +1,45 @@
 <div class="container">
   <h2>Mon super formulaire</h2>
-  <form (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="onSubmit()" ngNativeValidate>
     <div class="form-group">
       <label for="lastname">Nom</label>
-      <input type="text" class="form-control" id="lastname" [(ngModel)]="model.lastname"
-             name="lastname" placeholder="Boulon">
+      <input appFormInput appCtrlData="^[A-Za-z-]{2,20}$" type="text" class="form-control" id="lastname"
+             [(ngModel)]="model.lastname"
+             name="lastname" placeholder="Boulon" required>
       <label for="firstname">Prénom</label>
-      <input type="text" class="form-control" id="firstname" [(ngModel)]="model.firstname"
-             name="firstname" placeholder="Jacques">
+      <input appFormInput appCtrlData="^[A-Za-z-]{2,20}$" type="text" class="form-control" id="firstname"
+             [(ngModel)]="model.firstname"
+             name="firstname" placeholder="Jacques" required>
       <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" [(ngModel)]="model.email" name="email"
-             placeholder="jboulon@gmail.com">
+      <input appFormInput appCtrlData="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" type="email" class="form-control" id="email"
+             [(ngModel)]="model.email" name="email"
+             placeholder="jboulon@gmail.com" required>
       <label for="login">Login</label>
-      <input type="text" class="form-control" id="login" [(ngModel)]="model.login" name="login" placeholder="jboulon">
+      <input type="text" class="form-control" id="login" [(ngModel)]="model.login" name="login" placeholder="jboulon"
+             required>
       <label for="password">Mot de passe</label>
-      <input type="password" class="form-control" id="password" [(ngModel)]="model.password"
-             name="password" placeholder="123456">
+      <input appFormInput appCtrlData="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" type="password"
+             class="form-control" id="password" [(ngModel)]="model.password"
+             name="password" placeholder="123456" required>
       <label for="phone">Numéro de téléphone</label>
-      <input type="text" class="form-control" id="phone" [(ngModel)]="model.phone"
-             name="phone" placeholder="06 12 34 56 78">
+      <input appFormInput appCtrlData="^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$"
+             type="text" class="form-control" id="phone" [(ngModel)]="model.phone"
+             name="phone" placeholder="06 12 34 56 78" required>
       <label for="address">Adresse</label>
       <input type="text" class="form-control" id="address" [(ngModel)]="model.address"
-             name="address" placeholder="11 rue des clarinettes">
+             name="address" placeholder="11 rue des clarinettes" required>
       <label for="city">Ville</label>
-      <input type="text" class="form-control" id="city" [(ngModel)]="model.city" name="city" placeholder="Paris">
+      <input appFormInput appCtrlData="^[A-Za-z-]{2,20}$" type="text" class="form-control" id="city"
+             [(ngModel)]="model.city" name="city" placeholder="Paris" required>
       <label for="zip">Code postal</label>
-      <input type="text" class="form-control" id="zip" [(ngModel)]="model.zip" name="zip" placeholder="75000">
+      <input appFormInput appCtrlData="^(?:0[1-9]|[1-8]\d|9[0-8])\d{3}$" type="text" class="form-control" id="zip"
+             [(ngModel)]="model.zip" name="zip" placeholder="75000" required>
       <label for="country">Pays</label>
-      <input type="text" class="form-control" id="country" [(ngModel)]="model.country"
-             name="country" placeholder="France">
+      <input appFormInput appCtrlData="^[A-Za-z-]{2,20}$" type="text" class="form-control" id="country"
+             [(ngModel)]="model.country"
+             name="country" placeholder="France" required>
       <label for="civility">Civilité</label>
-      <select class="form-control" id="civility" [(ngModel)]="model.civility" name="civility">
+      <select class="form-control" id="civility" [(ngModel)]="model.civility" name="civility" required>
         <option value="M">M</option>
         <option value="Mme">Mme</option>
         <option value="Other">Autre</option>

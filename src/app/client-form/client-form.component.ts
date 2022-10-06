@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {Client} from "../client";
+import {Client} from "../shared/entities/client";
 import {Router} from "@angular/router";
-import {ClientService} from "../client.service";
+import {ClientService} from "../shared/services/client.service";
 
 @Component({
   selector: 'app-client-form',

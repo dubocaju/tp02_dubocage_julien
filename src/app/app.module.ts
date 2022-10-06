@@ -8,7 +8,8 @@ import {FormsModule} from "@angular/forms";
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {ResultFormComponent} from './result-form/result-form.component';
-import {ClientService} from "./client.service";
+import {ClientService} from "./shared/services/client.service";
+import { FormInputDirective } from './shared/directives/form-input.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {ClientService} from "./client.service";
     ClientFormComponent,
     HeaderComponent,
     FooterComponent,
-    ResultFormComponent
+    ResultFormComponent,
+    FormInputDirective
   ],
   imports: [
     BrowserModule,
