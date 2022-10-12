@@ -10,6 +10,8 @@ import {FooterComponent} from './footer/footer.component';
 import {ResultFormComponent} from './result-form/result-form.component';
 import {ClientService} from "./shared/services/client.service";
 import { FormInputDirective } from './shared/directives/form-input.directive';
+import { PasswordPipe } from './shared/pipes/password.pipe';
+import { PhonePipe } from './shared/pipes/phone.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FormInputDirective } from './shared/directives/form-input.directive';
     HeaderComponent,
     FooterComponent,
     ResultFormComponent,
-    FormInputDirective
+    FormInputDirective,
+    PasswordPipe,
+    PhonePipe
   ],
   imports: [
     BrowserModule,

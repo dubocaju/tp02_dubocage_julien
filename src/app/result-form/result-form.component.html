@@ -5,7 +5,8 @@
     <li class="list-group-item">Prénom: {{model.firstname}}</li>
     <li class="list-group-item">Email : {{model.email}}</li>
     <li class="list-group-item">Login : {{model.login}}</li>
-    <li class="list-group-item">Numéro de téléphone : {{model.phone}}</li>
+    <li class="list-group-item">Mot de passe : {{model.password | password }}</li>
+    <li class="list-group-item">Numéro de téléphone : {{model.phone | phone: model.locale}}</li>
     <li class="list-group-item">Adresse : {{model.address}}</li>
     <li class="list-group-item">Ville : {{model.city}}</li>
     <li class="list-group-item">Pays : {{model.country}}</li>

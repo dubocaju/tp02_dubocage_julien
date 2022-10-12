@@ -1,21 +1,19 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, Input } from '@angular/core';
+import {AbstractControl, NG_VALIDATORS, ValidationErrors, Validator} from "@angular/forms";
 
 @Directive({
-  selector: '[appFormInput]'
+  selector: '[appFormInput]',
+  providers: [{provide: NG_VALIDATORS, useExisting: FormInputDirective, multi: true}]
 })
-export class FormInputDirective {
+export class FormInputDirective implements Validator {
   @Input() appCtrlData: string = "";
 
-  constructor(private el: ElementRef) {}
-
-
-  @HostListener('blur') OnBlur() {
+  validate(control: AbstractControl): ValidationErrors | null {
     let regexp = new RegExp(this.appCtrlData);
-    if (!regexp.test(this.el.nativeElement.value)) {
-      this.el.nativeElement.classList.add('is-invalid');
-    } else {
-      this.el.nativeElement.classList.remove('is-invalid');
+    if (!regexp.test(control.value)) {
+      return {invalid: true};
     }
+    return null;
   }
 
 }

@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Mon super formulaire</h2>
-  <form (ngSubmit)="onSubmit()" ngNativeValidate>
+  <form #clientForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="lastname">Nom</label>
       <input appFormInput appCtrlData="^[A-Za-z-]{2,20}$" type="text" class="form-control" id="lastname"
@@ -15,18 +15,26 @@
              [(ngModel)]="model.email" name="email"
              placeholder="jboulon@gmail.com" required>
       <label for="login">Login</label>
-      <input type="text" class="form-control" id="login" [(ngModel)]="model.login" name="login" placeholder="jboulon"
+      <input appFormInput appCtrlData="\S{5}\S*" type="text" class="form-control" id="login" [(ngModel)]="model.login"
+             name="login" placeholder="jboulon"
              required>
       <label for="password">Mot de passe</label>
       <input appFormInput appCtrlData="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" type="password"
              class="form-control" id="password" [(ngModel)]="model.password"
              name="password" placeholder="123456" required>
       <label for="phone">Numéro de téléphone</label>
-      <input appFormInput appCtrlData="^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$"
-             type="text" class="form-control" id="phone" [(ngModel)]="model.phone"
-             name="phone" placeholder="06 12 34 56 78" required>
+      <div class="phone-container">
+        <input appFormInput appCtrlData="^([0-9]\s?){9,13}[0-9]$"
+               type="text" class="form-control" id="phone" [(ngModel)]="model.phone"
+               name="phone" placeholder="06 12 34 56 78" required>
+        <select class="form-control" id="locale" [(ngModel)]="model.locale" name="locale" required>
+          <option value="FR">FR 🇫🇷</option>
+          <option value="US">US 🇺🇸</option>
+        </select>
+      </div>
       <label for="address">Adresse</label>
-      <input type="text" class="form-control" id="address" [(ngModel)]="model.address"
+      <input appFormInput appCtrlData="\S{5}\S*"
+             type="text" class="form-control" id="address" [(ngModel)]="model.address"
              name="address" placeholder="11 rue des clarinettes" required>
       <label for="city">Ville</label>
       <input appFormInput appCtrlData="^[A-Za-z-]{2,20}$" type="text" class="form-control" id="city"
@@ -44,7 +52,7 @@
         <option value="Mme">Mme</option>
         <option value="Other">Autre</option>
       </select>
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit" class="btn btn-success" [disabled]="!clientForm.form.valid">Submit</button>
     </div>
   </form>
 </div>

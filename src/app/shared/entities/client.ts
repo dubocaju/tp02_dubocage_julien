@@ -5,6 +5,7 @@ export class Client {
   public login: string;
   public password: string;
   public phone: string;
+  public locale: string;
   public address: string;
   public city: string;
   public zip: string;
@@ -18,6 +19,7 @@ export class Client {
     this.login = '';
     this.password = '';
     this.phone = '';
+    this.locale = '';
     this.address = '';
     this.city = '';
     this.zip = '';
